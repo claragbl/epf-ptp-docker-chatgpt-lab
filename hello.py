@@ -23,3 +23,14 @@ def chatgpt():
     return completion['choices'][0]['message']['content']
 
 
+@app.route('/newlanguage')
+def chatgpt():
+    args = request.args
+    message = args.get("message")
+    language = args.get("language")
+    code = "can you print the code " + message + " in " + language
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": code}]
+    )
+    return completion['choices'][0]['message']['content']
