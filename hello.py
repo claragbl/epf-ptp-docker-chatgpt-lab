@@ -24,7 +24,7 @@ def chatgpt():
 
 
 @app.route('/newlanguage')
-def chatgpt():
+def chatgpt_lab2():
     args = request.args
     message = args.get("message")
     language = args.get("language")
